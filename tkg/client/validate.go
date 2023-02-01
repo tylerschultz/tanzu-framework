@@ -2076,12 +2076,6 @@ func (c *TkgClient) validateNameservers(nameserverConfigVariable, clusterRole st
 		return nil
 	}
 
-	if clusterRole == TkgLabelClusterRoleManagement && !c.IsFeatureActivated(constants.FeatureFlagManagementClusterCustomNameservers) {
-		return customNameserverFeatureFlagError(nameserverConfigVariable, nameservers, constants.FeatureFlagManagementClusterCustomNameservers)
-	} else if clusterRole == TkgLabelClusterRoleWorkload && !c.IsFeatureActivated(constants.FeatureFlagClusterCustomNameservers) {
-		return customNameserverFeatureFlagError(nameserverConfigVariable, nameservers, constants.FeatureFlagClusterCustomNameservers)
-	}
-
 	invalidNameservers := []string{}
 	for _, nameserver := range strings.Split(nameservers, ",") {
 		nameserver = strings.TrimSpace(nameserver)

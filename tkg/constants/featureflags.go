@@ -14,11 +14,6 @@ const (
 	FeatureFlagManagementClusterDualStackIPv6Primary = "features.management-cluster.dual-stack-ipv6-primary"
 	FeatureFlagClusterDualStackIPv4Primary           = "features.cluster.dual-stack-ipv4-primary"
 	FeatureFlagClusterDualStackIPv6Primary           = "features.cluster.dual-stack-ipv6-primary"
-	// Custom Nameserver feature flags determine whether it is permitted to
-	// provide the CONTROL_PLANE_NODE_NAMESERVERS and WORKER_NODE_NAMESERVERS
-	// when creating a cluster.
-	FeatureFlagManagementClusterCustomNameservers = "features.management-cluster.custom-nameservers"
-	FeatureFlagClusterCustomNameservers           = "features.cluster.custom-nameservers"
 	// AWS Instance Types Exclude ARM feature flags determine whether instance types with processor architecture
 	// support of ARM should be included when discovering available AWS instance types. Setting feature flag to true
 	// filters out ARM supporting instance types; false allows ARM instance types to be included in results.
